@@ -1,0 +1,18 @@
+name: first workflow
+# when you want to trigger it
+#also called trigger
+on: workflow_dispatch
+# works with indentation
+jobs:
+  #give name
+  first_job:
+    # need to define runner
+    # list of runner   ```https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners```
+      runs-on: ubuntu-latest
+      # need to define steps to be executed
+      steps:
+        - name: print llm
+          run: echo "Hello LLM"
+        - name: print llm
+          run: echo "Bye LLM"
+          
