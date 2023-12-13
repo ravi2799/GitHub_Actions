@@ -1,4 +1,4 @@
-name: test_project
+name: test_project_on_multiple_events_4
 # triggered on some events
 # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 

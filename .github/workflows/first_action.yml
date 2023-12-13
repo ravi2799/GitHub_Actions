@@ -1,4 +1,4 @@
-name: first workflow
+name: first_workflow_1
 # when you want to trigger it
 #also called trigger
 on: workflow_dispatch
