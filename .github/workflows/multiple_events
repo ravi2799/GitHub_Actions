@@ -6,7 +6,6 @@ name: test_project_on_multiple_events_4
 on: [push, workflow_dispatch]
 
 # list of actions "https://github.com/marketplace/actions/"
-
 jobs:
     # to test
     test:
