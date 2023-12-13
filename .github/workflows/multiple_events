@@ -1,0 +1,48 @@
+name: test_project
+# triggered on some events
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+
+# adding miltiple event triggers
+on: [push, workflow_dispatch]
+
+# list of actions "https://github.com/marketplace/actions/"
+
+jobs:
+    # to test
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            # set up actions as per your need "https://github.com/actions/setup-python"
+            - name: Get Code
+              uses: actions/checkout@v3
+            - name: Install python
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.11'
+            - run: python main.py
+            
+    # to deploy
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print llm
+              run: echo "Hello LLM"
+            - name: print llm
+              run: echo "Bye LLM"
+
+    # here this two jobs runs parallely but sometime we need job to run one by one
+    
+    sample_sequential:
+        # to run this job we need to finish first job
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            # set up actions as per your need "https://github.com/actions/setup-python"
+            - name: Get Code
+              uses: actions/checkout@v3
+            - name: Install python
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.11'
+            - run: python main.py
+    
