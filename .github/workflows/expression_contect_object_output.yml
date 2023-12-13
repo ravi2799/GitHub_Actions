@@ -1,0 +1,10 @@
+name:  output information
+on: workflow_dispatch
+jobs:
+    info:
+        runs-on: ubantu-latest
+        steps: 
+            - name: Output Github Context
+              # https://docs.github.com/en/actions/learn-github-actions/expressions  
+              # use some github object
+              run: echo "${{ toJson(github)}}"
